@@ -10,15 +10,8 @@ class MTDfEngine(object):
         self._max_score = constants.MAX_SCORE
         self._transTable = t_table.TransTable()
 
-    # not integrated. needs tinkering.
     def quiesce(self, alpha, beta, board, entry, final_board):
         """ Apply a Quiescence Search, which aids combat the horizon effect.
-        :param final_board:
-        :param entry:
-        :param board:
-        :param alpha:
-        :param beta:
-        :return: alpha:
         """
         move = None
         stand_pat = evaluator.evaluator(board, entry.result)
@@ -57,7 +50,6 @@ class MTDfEngine(object):
 
         if entry and entry.depth >= max_depth - depth:  # If entry exists and...
             if entry.flag == constants.EXACT_SCORE:          # If entry is flagged as an exact score (0):
-                self._transTable.hits += 1                          # Add hit to track encounters of entry
                 return entry.move, entry.score, entry.finalBoard    # Return entry
             elif entry.flag == constants.LOWER_BOUND_SCORE:  # If entry is flagged as an lower bound score (1):
                 alpha = max(alpha, entry.score)                     # Get max
