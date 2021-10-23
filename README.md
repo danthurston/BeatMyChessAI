@@ -1,7 +1,9 @@
 # BeatMyChessAI
 Main Computing Project. By Daniel Thurston.
+
 This software provides a platform to compete against four different AI chess algorithms: NegaMax, NegaMax with Alpha-Beta Pruning, NegaScout with Quiescent Search, and MTD(f).
 It comes with a GUI with various statistical outputs such as timers and move-history, as well as functionality to highlight potential moves for any selected chess piece.
+
 The software has a goal of teaching AI concepts through the medium of chess by allowing users to adjust the search depth and experiment between algorithms.
 
 
